@@ -77,5 +77,52 @@ namespace movieparty.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult<Group> Post([FromBody] Group newGroup)
+        {
+            try
+            {
+                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                newGroup.UserId = userId;
+                return Ok(_gs.Create(newGroup));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public ActionResult<Group> Edit(int id, [FromBody] Group groupToUpdate)
+        {
+            try
+            {
+                groupToUpdate.Id = id;
+                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                return Ok(_gs.Edit(groupToUpdate, userId));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public ActionResult<string> Delete(int id)
+        {
+            try
+            {
+                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                return Ok(_gs.Delete(id, userId));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-namespace MovieParty.Models
+namespace movieparty.Models
 {
     public class Member
     {

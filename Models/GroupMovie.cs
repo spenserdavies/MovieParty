@@ -6,5 +6,6 @@ namespace movieparty.Models
         public int GroupId { get; set; }    
         public int MovieId { get; set; }
         public string UserId { get; set; }
+        public int Votes { get; set; }
     }
 }

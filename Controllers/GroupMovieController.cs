@@ -47,7 +47,22 @@ namespace movieparty.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        //EDIT
+        [HttpPut("{id}")]
+        [Authorize]
+        public ActionResult<Keep> Edit(int id, [FromBody] Keep editGroupMovie)
+        {
+            try
+            {
+                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                editKeep.Id = id;
+                return Ok(_ks.Edit(editGroupMovie, movieId));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         //DELETEBYID
         [HttpDelete("{id}")]
         public ActionResult<DTOGroupMovie> Delete(int Id)

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data;
+using Dapper;
 using movieparty.Models;
 
 namespace movieparty.Repositories

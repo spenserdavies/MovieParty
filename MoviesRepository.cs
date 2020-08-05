@@ -21,12 +21,14 @@ namespace MovieParty.Repositories
 
         public Movie GetById(int id)
         {
-            throw new NotImplementedException();
+            string sql = "SELECT * FROM movies WHERE id = @id";
+            return _db.QueryFirstOrDefault<Movie>(sql, new { id });
         }
 
         public Movie GetMoviesByUserId(string userId)
         {
-            throw new NotImplementedException();
+            string sql = "SELECT * FROM movies WHERE userId = @userId";
+            return (Movie)_db.Query<Movie>(sql, new { userId });
         }
 
         public object Create(Movie newMovie)

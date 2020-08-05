@@ -56,34 +56,15 @@ namespace MovieParty.Controllers
                 return BadRequest(e.Message);
             };
         }
-        [HttpPut(" {id}")]
-        public ActionResult<Movie> Edit(int id, [FromBody] Movie editMovie)
-        {
-            try
-            {
-                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                editMovie.Id = id;
-                return Ok(_ms.Edit(editMovie, userId));
+        [HttpPost]
+        public ActionResult<Movie> Post ([FromBody] Movie newMovie) {
+            try {
+                return Ok (_ms.Create (newMovie));
             }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
+            catch (Exception e) {
+                return BadRequest (e.Message);
             }
         }
 
-        [HttpDelete("{id}")]
-        [Authorize]
-        public ActionResult<string> Delete(int id)
-        {
-            try
-            {
-                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                return Ok(_ms.Delete(id, userId));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
     }
 }

@@ -19,22 +19,22 @@ namespace MovieParty.Services
 
         public Movie GetById(int id)
         {
-
+            Movie foundMovie = _repo.GetById(id);
+            if (foundMovie == null)
+            {
+                throw new Exception("Invalid Id Muchacha");
+            }
+            return foundMovie;
         }
 
         public Movie GetByUserId(string userId)
         {
-            throw new NotImplementedException();
+            return _repo.GetMoviesByUserId(userId);
         }
 
-        public Movie Edit(Movie editMovie, string userId)
+        internal object Create(Movie newMovie)
         {
-            throw new NotImplementedException();
-        }
-
-        public Movie Delete(int id, string userId)
-        {
-            throw new NotImplementedException();
+            return _repo.Create(newMovie);
         }
     }
 }

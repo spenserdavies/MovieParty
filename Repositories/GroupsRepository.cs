@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Data;
-using Dapper;
 using movieparty.Models;
 
 namespace movieparty.Repositories
@@ -42,7 +41,7 @@ namespace movieparty.Repositories
         internal bool Edit(Group groupToUpdate, string userId)
         {
             groupToUpdate.UserId = userId;
-             string sql = @"
+            string sql = @"
             UPDATE groups
             SET
              description = @Description,
@@ -55,8 +54,8 @@ namespace movieparty.Repositories
 
         internal bool Delete(int id, string userId)
         {
-            string sql="DELETE FROM groups WHERE id = @id AND userId = @userId LIMIT 1";
-            int affectedRows = _db.Execute(sql, new { id, userId});
+            string sql = "DELETE FROM groups WHERE id = @id AND userId = @userId LIMIT 1";
+            int affectedRows = _db.Execute(sql, new { id, userId });
             return affectedRows == 1;
         }
     }

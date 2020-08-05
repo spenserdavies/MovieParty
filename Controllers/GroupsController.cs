@@ -14,8 +14,8 @@ namespace movieparty.Controllers
     {
         private readonly GroupsService _gs;
         private readonly GroupMovieService _gmov;
-        private readonly GroupMemberService _gmem;
-        public GroupsController(GroupsService gs, GroupMovieService gmov, GroupMemberService gmem)
+        private readonly GroupMembersService _gmem;
+        public GroupsController(GroupsService gs, GroupMovieService gmov, GroupMembersService gmem)
         {
             _gs = gs;
             _gmov = gmov;

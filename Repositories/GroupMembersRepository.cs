@@ -45,7 +45,7 @@ namespace movieparty.Repositories
             return affectedRows == 1;
         }
 
-        internal IEnumerable<GroupMemberViewModel> GetMembersByGroupId(int groupId, string userId)
+        internal IEnumerable<GroupMemberViewModel> GetMembersByGroupId(int groupId)
         {
             string sql = @"
             SELECT 
@@ -54,7 +54,7 @@ namespace movieparty.Repositories
             FROM groupmembers gm
             INNER JOIN members m ON m.id = gm.memberId
             WHERE (groupId = @groupId);";
-            return _db.Query<GroupMemberViewModel>(sql, new {groupId, userId });
+            return _db.Query<GroupMemberViewModel>(sql, new {groupId});
         }
 
 

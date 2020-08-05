@@ -39,9 +39,9 @@ namespace movieparty.Services
             return exists;
         }
 
-        public IEnumerable<GroupMemberViewModel> GetMembersByGroupId(int id, string userId)
+        public IEnumerable<GroupMemberViewModel> GetMembersByGroupId(int id)
         {
-            return _repo.GetMembersByGroupId(id, userId);
+            return _repo.GetMembersByGroupId(id);
         }
 
        }

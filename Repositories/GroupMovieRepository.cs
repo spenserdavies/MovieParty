@@ -19,14 +19,14 @@ namespace movieparty.Repositories {
             string sql = "SELECT * FROM groupmovies WHERE groupId = @GroupId";
             return _db.QueryFirstOrDefault<DTOGroupMovie> (sql, new { groupId });
         }
-        internal IEnumerable<GroupMovieViewModel> GetMoviesByGroupId (int groupId, string movieId) {
+        internal IEnumerable<GroupMovieViewModel> GetMoviesByGroupId (int groupId) {
             string sql = @"SELECT 
             g.*,
             gm.id as groupMovieId
             FROM moviegroups gm
             INNER JOIN movies m ON m.id = mg.groupId 
             WHERE (groupId = @groupId)";
-            return _db.Query<GroupMovieViewModel> (sql, new { groupId, movieId });
+            return _db.Query<GroupMovieViewModel> (sql, new { groupId });
         }
 
         internal IEnumerable<GroupMovieViewModel> GetByGroupId (int groupId) {

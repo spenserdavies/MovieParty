@@ -16,16 +16,16 @@ namespace movieparty.Services {
             }
             return exists;
         }
-        public IEnumerable<GroupMovieViewModel> GetMoviesByGroupId (int movieId, string groupId) {
-            return _repo.GetMoviesByGroupId (movieId, groupId);
-        }
-
-        internal object Get () {
-            throw new NotImplementedException ();
+        public IEnumerable<GroupMovieViewModel> GetMoviesByGroupId (int groupId) {
+            return _repo.GetMoviesByGroupId (groupId);
         }
 
         internal IEnumerable<GroupMovieViewModel> Get (int groupId) {
             return _repo.GetByGroupId (groupId);
+        }
+
+        internal object Get () {
+            throw new NotImplementedException ();
         }
 
         public DTOGroupMovie Create (DTOGroupMovie newDTOGroupMovie) {

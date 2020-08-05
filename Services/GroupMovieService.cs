@@ -31,7 +31,19 @@ namespace movieparty.Services
         {
             return _repo.GetByGroupId(groupId);
         }
-
+        internal GroupMovie Edit(GroupMovie editGroupMovie, string userId)
+        {
+            GroupMovie foundGroupMovie = GetById(editGroupMovie.Id);
+            if (foundGroupMovie.Votes < editGroupMovie.Votes)
+            {
+                if (_repo.voteGroupMovie(editGroupMovie))
+                {
+                    foundGroupMovie.Votes = editGroupMovie.Votes;
+                    return foundGroupMovie;
+                }
+                throw new Exception("You can't view that GroupMovie");
+            }
+        }
 
         public DTOGroupMovie Create(DTOGroupMovie newDTOGroupMovie)
         {

@@ -77,19 +77,19 @@ export default {
 
 <style>
 
-/* font-family: 'Bilbo', cursive;
-font-family: 'Creepster', cursive;
-font-family: 'Dancing Script', cursive;
-font-family: 'IM Fell DW Pica SC', serif;
-font-family: 'Lobster', cursive;
-font-family: 'Nosifer', cursive;
-font-family: 'Playfair Display', serif;
-font-family: 'Rammetto One', cursive;
-font-family: 'Ruslan Display', cursive;
-font-family: 'Russo One', sans-serif;
-font-family: 'Sarpanch', sans-serif;
-font-family: 'Satisfy', cursive;
-font-family: 'Sigmar One', cursive; */
+/* font-family: 'Bilbo', cursive;             -- Adventure
+font-family: 'Creepster', cursive;            -- Horror
+font-family: 'Dancing Script', cursive;       -- Romance
+font-family: 'IM Fell DW Pica SC', serif;     -- Fantasy
+font-family: 'Lobster', cursive;              -- Logo
+font-family: 'Nosifer', cursive;              -- Thriller/Mystery
+font-family: 'Playfair Display', serif;       -- Drama
+font-family: 'Rammetto One', cursive;         -- Animated
+font-family: 'Ruslan Display', cursive;       -- Sci-fi
+font-family: 'Russo One', sans-serif;         -- Action
+font-family: 'Sarpanch', sans-serif;          -- Crime
+font-family: 'Satisfy', cursive;              -- RomCom
+font-family: 'Sigmar One', cursive;           -- Comedy         */
 
 .logo-m{
   font-family: 'Lobster', cursive;

@@ -57,4 +57,9 @@ export default {
   position: absolute;
   top: 0px;
 }
+
+.home{
+  overflow-y: hidden;
+  height: 90vh;
+}
 </style>

@@ -77,9 +77,9 @@ export default {
 
 <style>
 
-/* font-family: 'Bilbo', cursive;             -- Adventure
-font-family: 'Creepster', cursive;            -- Horror
-font-family: 'Dancing Script', cursive;       -- Romance
+/* font-family: 'Bilbo', cursive;             -- Adventure              white: #FFF, gold: #FFC700, parchment color: #FCFFDA 
+font-family: 'Creepster', cursive;            -- Horror                 grey: #B2B2B2, green: #33C600, black: #000, lGreen: #EBFFE3
+font-family: 'Dancing Script', cursive;       -- Romance                
 font-family: 'IM Fell DW Pica SC', serif;     -- Fantasy
 font-family: 'Lobster', cursive;              -- Logo
 font-family: 'Nosifer', cursive;              -- Thriller/Mystery

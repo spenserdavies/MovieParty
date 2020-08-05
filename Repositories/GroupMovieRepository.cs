@@ -36,7 +36,30 @@ namespace movieparty.Repositories
             WHERE (groupId = @groupId)";
             return _db.Query<GroupMovieViewModel>(sql, new { groupId, movieId });
         }
-
+        public bool voteMovieGroup(MovieGroup moviegroupToVote)
+        {
+            string sql = @"
+            UPDATE moviegroup
+            SET
+            votes = @Votes
+            WHERE id = @Id";
+            int affectedRows = _db.Execute(sql, moviegroupToVote);
+            return affectedRows == 1;
+        }
+        internal bool Edit(MovieGroup editGroupMovie, string userId)
+        {
+            string sql = @"
+            UPDATE movieGroup
+            SET
+            groupId = @GroupId,
+            movieId = @MovieId,
+            userId = @UserId,
+            votes = @Votes,
+            WHERE id = @Id
+            ";
+            int affectedRows = _db.Execute(sql, editMovieGroup);
+            return affectedRows == 1;
+        }
 
         internal void Delete(int id)
         {

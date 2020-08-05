@@ -26,7 +26,7 @@ namespace movieparty.Controllers
             try
             {
                 string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                return Ok(_gms.GetHashCode(userId));
+                return Ok(_gms.Get(userId));
             }
             catch (Exception e)
             {
@@ -35,7 +35,7 @@ namespace movieparty.Controllers
         }
         //POST
         [HttpPost]
-        public ActionResult<DTOVaultKeep> Post([FromBody] DTOGroupMovie newDTOGroupMovie)
+        public ActionResult<DTOGroupMovie> Post([FromBody] DTOGroupMovie newDTOGroupMovie)
         {
             try
             {
@@ -50,12 +50,12 @@ namespace movieparty.Controllers
         //EDIT
         [HttpPut("{id}")]
         [Authorize]
-        public ActionResult<Keep> Edit(int id, [FromBody] Keep editGroupMovie)
+        public ActionResult<MovieGroup> Edit(int id, [FromBody] MovieGroup editGroupMovie)
         {
             try
             {
                 string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                editKeep.Id = id;
+                editMovieGroup.Id = id;
                 return Ok(_ks.Edit(editGroupMovie, movieId));
             }
             catch (Exception e)

@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" :to="{ name: 'home' }">Keepr</router-link>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <router-link class="navbar-brand text-white" :to="{ name: 'home' }">MovieParty</router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,11 +14,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" :class="{ active: $route.name == 'home' }">
-          <router-link :to="{ name: 'home' }" class="nav-link"
-            >Home</router-link
-          >
-        </li>
         <li
           class="nav-item"
           v-if="$auth.isAuthenticated"
@@ -29,10 +24,11 @@
           >
         </li>
       </ul>
-      <span class="navbar-text">
+      <span class="navbar-text"> <!-- NOTE @click="login" -->
         <button
-          class="btn btn-success"
-          @click="login"
+          id="btn-login"
+          class="btn btn-secondary"
+          
           v-if="!$auth.isAuthenticated"
         >
           Login

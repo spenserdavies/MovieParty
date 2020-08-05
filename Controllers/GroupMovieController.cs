@@ -40,7 +40,7 @@ namespace movieparty.Controllers
             try
             {
                 newDTOGroupMovie.UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                return Ok(_vks.Create(newDTOGroupMovie));
+                return Ok(_gms.Create(newDTOGroupMovie));
             }
             catch (Exception e)
             {
@@ -50,13 +50,13 @@ namespace movieparty.Controllers
         //EDIT
         [HttpPut("{id}")]
         [Authorize]
-        public ActionResult<MovieGroup> Edit(int id, [FromBody] MovieGroup editGroupMovie)
+        public ActionResult<DTOGroupMovie> Edit(int movieId, [FromBody] DTOGroupMovie editGroupMovie)
         {
             try
             {
                 string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                editMovieGroup.Id = id;
-                return Ok(_ks.Edit(editGroupMovie, movieId));
+                editDTOGroupMovie.Id = id;
+                return Ok(_gms.Edit(editDTOGroupMovie, movieId));
             }
             catch (Exception e)
             {
@@ -70,7 +70,7 @@ namespace movieparty.Controllers
             try
             {
                 string user = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                return Ok(_vks.Delete(user, Id));
+                return Ok(_gms.Delete(user, Id));
             }
             catch (System.Exception err)
             {

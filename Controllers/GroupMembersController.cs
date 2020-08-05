@@ -28,7 +28,7 @@ namespace movieparty.Controllers
            try
             {
                 string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-                return Ok(_gms.GetAll());
+                return Ok(_gms.Get());
             }
             catch (Exception err)
             {

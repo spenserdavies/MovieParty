@@ -1,6 +1,18 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <router-link class="navbar-brand text-white" :to="{ name: 'home' }">MovieParty</router-link>
+    <router-link class="navbar-brand text-white" :to="{ name: 'home' }">
+    <div class="row my-0 py-0">
+      <div class="col-12 text-center mb-0 pb-0">
+        <div class="logo-m my-0 py-0">M</div>
+      </div>
+    </div>
+    <div class="row my-0 py-0">
+      <div class="col-12 text-center my-0 py-0">
+        <small>MovieParty</small>
+      </div>
+    </div>
+
+    </router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -63,4 +75,26 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+/* font-family: 'Bilbo', cursive;
+font-family: 'Creepster', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'IM Fell DW Pica SC', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Nosifer', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Rammetto One', cursive;
+font-family: 'Ruslan Display', cursive;
+font-family: 'Russo One', sans-serif;
+font-family: 'Sarpanch', sans-serif;
+font-family: 'Satisfy', cursive;
+font-family: 'Sigmar One', cursive; */
+
+.logo-m{
+  font-family: 'Lobster', cursive;
+  font-size: 32px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+</style>

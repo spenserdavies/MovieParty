@@ -1,11 +1,14 @@
 <template>
   <div class="home">
     <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000" data-pause="false">
-      <div class="card welcome-card align-items-center py-3">
+      <div class="card bg-primary">
+
+      <div class="card welcome-card bg-info align-items-center py-3 m-2 shadow">
         <h2>Welcome To</h2>
         <h1>MovieParty</h1>
         <br>
         <p>Please Log In To Continue</p>
+      </div>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">

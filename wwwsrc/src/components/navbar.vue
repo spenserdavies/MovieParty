@@ -40,7 +40,7 @@
         <button
           id="btn-login"
           class="btn btn-secondary"
-          
+          @click="login"
           v-if="!$auth.isAuthenticated"
         >
           Login

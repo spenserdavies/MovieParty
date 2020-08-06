@@ -13,6 +13,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using movieparty.Repositories;
+using movieparty.Services;
+using MovieParty.Repositories;
+using MovieParty.Services;
 using MySql.Data.MySqlClient;
 
 namespace movieparty
@@ -59,6 +63,16 @@ namespace movieparty
             services.AddScoped<IDbConnection>(x => CreateDbConnection());
 
             //NOTE REGISTER SERVICES AND REPOSITORIES
+            services.AddTransient<MoviesService>();
+            services.AddTransient<MoviesRepository>();
+            services.AddTransient<MembersService>();
+            services.AddTransient<MembersRepository>();
+            services.AddTransient<GroupsService>();
+            services.AddTransient<GroupsRepository>();
+            services.AddTransient<GroupMovieService>();
+            services.AddTransient<GroupMovieRepository>();
+            services.AddTransient<GroupMembersService>();
+            services.AddTransient<GroupMembersRepository>();
         }
 
         private IDbConnection CreateDbConnection()

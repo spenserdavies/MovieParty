@@ -23,18 +23,18 @@ namespace movieparty.Controllers
 
         [HttpGet]
 
-        // public ActionResult<IEnumerable<GroupMemberViewModel>> Get()
-        // {
-        //    try
-        //     {
-        //         string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-        //         return Ok(_gms.GetAll());
-        //     }
-        //     catch (Exception err)
-        //     {
-        //         return BadRequest(err.Message);
-        //     }
-        // }
+        public ActionResult<IEnumerable<GroupMemberViewModel>> Get()
+        {
+            try
+            {
+                string userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                return Ok(_gms.GetAll());
+            }
+            catch (Exception err)
+            {
+                return BadRequest(err.Message);
+            }
+        }
 
         [HttpGet("{id}")]
         public ActionResult<DTOGroupMember> GetById(int id)

@@ -69,7 +69,7 @@ namespace movieparty
             services.AddTransient<MembersRepository>();
             services.AddTransient<GroupsService>();
             services.AddTransient<GroupsRepository>();
-            services.AddTransient<GroupMovieService>();
+            services.AddTransient<GroupMoviesService>();
             services.AddTransient<GroupMovieRepository>();
             services.AddTransient<GroupMembersService>();
             services.AddTransient<GroupMembersRepository>();

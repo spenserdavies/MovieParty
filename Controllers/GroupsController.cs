@@ -13,9 +13,9 @@ namespace movieparty.Controllers
     public class GroupsController : ControllerBase
     {
         private readonly GroupsService _gs;
-        private readonly GroupMovieService _gmov;
+        private readonly GroupMoviesService _gmov;
         private readonly GroupMembersService _gmem;
-        public GroupsController(GroupsService gs, GroupMovieService gmov, GroupMembersService gmem)
+        public GroupsController(GroupsService gs, GroupMoviesService gmov, GroupMembersService gmem)
         {
             _gs = gs;
             _gmov = gmov;
@@ -52,12 +52,12 @@ namespace movieparty.Controllers
 
         [HttpGet("{id}/movies")]
         [Authorize]
-        public ActionResult <IEnumerable<GroupMovieViewModel>> GetMoviesByGroupId(int id)
+        public ActionResult<IEnumerable<GroupMovieViewModel>> GetMoviesByGroupId(int id)
         {
             try
             {
-            return Ok(_gmov.GetMoviesByGroupId(id));
-            } 
+                return Ok(_gmov.GetMoviesByGroupId(id));
+            }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
@@ -66,7 +66,7 @@ namespace movieparty.Controllers
 
         [HttpGet("{id}/members")]
         [Authorize]
-        public ActionResult <IEnumerable<GroupMemberViewModel>> GetMembersByGroupId(int id)
+        public ActionResult<IEnumerable<GroupMemberViewModel>> GetMembersByGroupId(int id)
         {
             try
             {

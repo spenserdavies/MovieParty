@@ -10,7 +10,7 @@ namespace MovieParty.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+
     public class MoviesController : ControllerBase
     {
         private readonly MoviesService _ms;
@@ -57,12 +57,15 @@ namespace MovieParty.Controllers
             };
         }
         [HttpPost]
-        public ActionResult<Movie> Post ([FromBody] Movie newMovie) {
-            try {
-                return Ok (_ms.Create (newMovie));
+        public ActionResult<Movie> Post([FromBody] Movie newMovie)
+        {
+            try
+            {
+                return Ok(_ms.Create(newMovie));
             }
-            catch (Exception e) {
-                return BadRequest (e.Message);
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
 

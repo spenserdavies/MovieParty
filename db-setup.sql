@@ -20,29 +20,32 @@ USE movieparty;
 -- CREATE TABLE movies (
 --     id int NOT NULL AUTO_INCREMENT,
 --     title VARCHAR(255) NOT NULL,
+--     actors ENUM ("Actor1", "Actor2", "Actor3"),
+--     runtime VARCHAR (255) NOT NULL,
+--     releasedate VARCHAR (255) NOT NULL,
 --     img VARCHAR(255),
 --     PRIMARY KEY (id)
 -- );
 
--- CREATE TABLE groupmovies (
---     id int NOT NULL AUTO_INCREMENT,
---     groupId int NOT NULL,
---     movieId int NOT NULL,
---     userId VARCHAR(255) NOT NULL,
---     votes INT DEFAULT 0,
+CREATE TABLE groupmovies (
+    id int NOT NULL AUTO_INCREMENT,
+    groupId int NOT NULL,
+    movieId int NOT NULL,
+    userId VARCHAR(255) NOT NULL,
+    votes INT DEFAULT 0,
 
---     PRIMARY KEY (id),
---     INDEX (groupId, movieId),
---     INDEX (userId),
+    PRIMARY KEY (id),
+    INDEX (groupId, movieId),
+    INDEX (userId),
 
---     FOREIGN KEY (groupId)
---         REFERENCES groups(id)
---         ON DELETE CASCADE,
+    FOREIGN KEY (groupId)
+        REFERENCES groups(id)
+        ON DELETE CASCADE,
 
---     FOREIGN KEY (movieId)
---         REFERENCES movies(id)
---         ON DELETE CASCADE
--- )
+    FOREIGN KEY (movieId)
+        REFERENCES movies(id)
+        ON DELETE CASCADE
+)
 
 -- CREATE TABLE groupmembers (
 --     id int NOT NULL AUTO_INCREMENT,

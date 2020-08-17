@@ -11,7 +11,7 @@ USE movieparty;
 
 -- CREATE TABLE members (
 --     id int NOT NULL AUTO_INCREMENT,
---     username VARCHAR(255) NOT NULL,
+--     username VARCHAR(255) NOT NULL DEFAULT 'MovieBuff',
 --     userId VARCHAR(255),
 --     img VARCHAR(255),
 --     INDEX userId (userId),
@@ -51,8 +51,8 @@ USE movieparty;
 --     id int NOT NULL AUTO_INCREMENT,
 --     groupId int NOT NULL,
 --     memberId int NOT NULL,
---     userId VARCHAR(255) NOT NULL,
---     status VARCHAR(255) NOT NULL,
+--     userId VARCHAR(255) NOT NULL DEFAULT 'User X',
+--     status VARCHAR(255) NOT NULL DEFAULT 'unidentified',
 --     hasVoted TINYINT,
 
 --     PRIMARY KEY (id),
@@ -83,4 +83,4 @@ USE movieparty;
 -- DROP TABLE IF EXISTS members;
 -- DROP TABLE IF EXISTS movies;
 -- DROP TABLE IF EXISTS groupmovies;
--- DROP TABLE IF EXISTS groupmembrs;
+-- DROP TABLE IF EXISTS groupmembers;
